@@ -1,3 +1,11 @@
+Nodemon 
+- see package.json 
+- nodemon is installed as a development dependency, so if you enter the command `npm start` the server will start 
+(and the webpage will refresh automatically)
+
+
+
+
 <img src="https://github.com/node-girls/workshop-cms/blob/master/readme-images/logo.png?raw=true">
 
 [![Join the chat at https://gitter.im/node-girls/express-workshop-complete](https://badges.gitter.im/node-girls/express-workshop-complete.svg)](https://gitter.im/node-girls/express-workshop-complete?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)

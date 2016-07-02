@@ -1,0 +1,32 @@
+{
+  "name": "express-workshop",
+  "version": "1.0.0",
+  "description": "Node Express workshop from nodegirls",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore 'data/*.json' server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiocontrolled/express-workshop.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "workshop"
+  ],
+  "author": "Alison Benjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radiocontrolled/express-workshop/issues"
+  },
+  "homepage": "https://github.com/radiocontrolled/express-workshop#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
