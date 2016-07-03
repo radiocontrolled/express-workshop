@@ -52,16 +52,37 @@ app.post("/create-post", function(request, response){
   // the request he req object represents the HTTP request and has 
   // properties for the request query string, parameters, body, HTTP headers, and so on.
 
+  // read the existing json 
   fs.readFile(__dirname + '/data/posts.json', function(error, file){
 
+  
+    // take the existing posts.json file (which is a buffer) and parse this as a JSON, and save it to parsed file
     var parsedFile = JSON.parse(file);
+    
+
+
+    // get the current time    
     var time = Date.now();
  
-    
+    // save the user submitted data (request.body) in the newPost variable
     var newPost = request.body; 
 
-    parsedFile[time] = newPost.blogpost;
 
+    // key is time, value is blogpost. we're adding this key/value pair to the original file
+   // parsedFile[time] = newPost.blogpost;
+
+    parsedFile[time] = {
+      "blogtitle" : newPost.blogtitle,
+      "blogpost": newPost.blogpost
+    };
+
+    // console.log("title", newPost.blogtitle);
+    // console.log("blogpost", newPost.blogpost);
+
+
+
+
+    // parsedFile is an JS object that needs to be changed into a JSON strings
     updatedBlog = JSON.stringify(parsedFile);
 
     fs.writeFile(__dirname + '/data/posts.json', updatedBlog, function (error) {

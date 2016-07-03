@@ -136,6 +136,11 @@ hr {
     background: white;
 }
 
+#blogPostTitle {
+  background: white;
+  border: 1px solid #848484;
+}
+
 p.date {
   color: red;
 }
