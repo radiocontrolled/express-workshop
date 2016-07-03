@@ -136,6 +136,10 @@ hr {
     background: white;
 }
 
+p.date {
+  color: red;
+}
+
 .post p {
 	margin: 5px 10px;
 }

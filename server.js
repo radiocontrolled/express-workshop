@@ -55,7 +55,9 @@ app.post("/create-post", function(request, response){
   fs.readFile(__dirname + '/data/posts.json', function(error, file){
 
     var parsedFile = JSON.parse(file);
-    var time = Date.now(); //get the date now
+    var time = Date.now();
+ 
+    
     var newPost = request.body; 
 
     parsedFile[time] = newPost.blogpost;
@@ -69,26 +71,29 @@ app.post("/create-post", function(request, response){
 
   });
 
-
-
-
-
-
-
   response.redirect('/'); // this will redirect the end user to the root of the application once the form is submitted
 });
 
+// when there is a get request for the /get-posts endpoint
+// send posts.json to the client so it can be rendered using script.js
 
+app.get("/get-posts", function(request, response){
 
+  var options = {
+    root: __dirname,
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
+  };
 
-// read the data from data/posts.json
-// fs.readFile(__dirname + '/data/posts.json', function (error, file) {
-//   parsedFile = JSON.parse(file);
-//   console.log(parsedFile);
- 
-// });
+  response.sendFile('/data/posts.json', options, function (error) {
+    if(error) {
+      console.log(error);  
+    }
 
-
+  });
+});
 
 
 
